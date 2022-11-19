@@ -42,7 +42,7 @@ public class Controller {
     }
 
     @PutMapping("update/{id}")
-    public String updateClienteById(@PathVariable Long id, String novoNome){
+    public String updateClienteById(@PathVariable Long id, @RequestBody String novoNome){
         Optional<Cliente> clienteOptional = clienteRepository.findById(id);
         if (clienteOptional.isPresent()){
            Cliente c = clienteOptional.get();
